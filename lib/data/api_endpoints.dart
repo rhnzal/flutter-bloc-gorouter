@@ -1,1 +1,0 @@
-String userListWithDelayAPI({required int delay})=> 'https://reqres.in/api/users?delay=$delay';

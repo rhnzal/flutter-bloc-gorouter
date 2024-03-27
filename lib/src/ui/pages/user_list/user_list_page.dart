@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_architecture/bloc/user_list/user_list_bloc.dart';
+import 'package:flutter_bloc_architecture/src/bloc/user_list/user_list_bloc.dart';
+import 'package:flutter_bloc_architecture/src/ui/common/style.dart';
 
 class UserListPage extends StatelessWidget {
   const UserListPage({super.key});
@@ -81,8 +82,8 @@ class UserListViewWidget extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(user.first_name, style: const TextStyle(fontSize: 16)),
-                            Text(user.email, style: const TextStyle(fontSize: 12, color: Colors.grey),),
+                            Text(user.first_name, style: MyTextStyle.bodyMedium),
+                            Text(user.email, style: MyTextStyle.caption),
                           ],
                         )
                       )

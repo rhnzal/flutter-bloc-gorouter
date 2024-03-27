@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc_architecture/data/models/response.dart';
-import 'package:flutter_bloc_architecture/data/services/user_services.dart';
+import 'package:flutter_bloc_architecture/src/data/models/response.dart';
+import 'package:flutter_bloc_architecture/src/data/services/user_services.dart';
 
 import '../../data/models/user.dart';
 
@@ -12,7 +12,7 @@ class UserListBloc extends Bloc<UserListEvent, UserListState> {
   UserListBloc() : super(UserListInitialState([])) {
 
     on<UserListLoadEvent>((event, emit) async {
-      emit(UserListLoadingState(state.userList));
+      emit(UserListLoadingState([]));
       var response = await UserService.getUserListData();
 
       if (response.isSuccess) {

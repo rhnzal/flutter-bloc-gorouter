@@ -18,15 +18,23 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
+                Navigator.pushNamed(context, AppPage.multiListPage);
+              }, 
+              child: Text('Multi List')
+            ),
+
+            ElevatedButton(
+              onPressed: () {
                 Navigator.pushNamed(context, AppPage.userListPage);
               }, 
               child: Text('User List')
             ),
+
             ElevatedButton(
               onPressed: () {
-        
+                Navigator.pushNamed(context, AppPage.loginPage);
               }, 
-              child: Text('Add User')
+              child: Text('Login')
             ),
           ],
         ),

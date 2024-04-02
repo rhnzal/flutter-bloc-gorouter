@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_architecture/route.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,21 +19,21 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppPage.multiListPage);
+                GoRouter.of(context).goNamed(AppPage.multiListPage);
               }, 
               child: Text('Multi List')
             ),
 
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppPage.userListPage);
+                GoRouter.of(context).goNamed(AppPage.userListPage);
               }, 
               child: Text('User List')
             ),
 
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppPage.loginPage);
+                GoRouter.of(context).goNamed(AppPage.loginPage);
               }, 
               child: Text('Login')
             ),

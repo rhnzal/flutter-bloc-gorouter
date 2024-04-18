@@ -1,3 +1,3 @@
 # flutter_bloc_architecture
 
-A new Flutter project.
+Flutter example app using BLoC state management, go_router + navigator

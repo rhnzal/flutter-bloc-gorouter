@@ -1,7 +1,11 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_architecture/route.dart';
 import 'package:flutter_bloc_architecture/src/bloc/login/login_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 // Contoh usecase ketika memerlukan stateful widget, bisa di gabungkan dengan bloc
 
@@ -35,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
     // jika ada suatu case harus menggunakan setstate, agar instance loginBloc tidak dibuat ulang maka pindahkan ke initstate
     loginBloc = context.read<LoginBloc>();
+    log('initstate login page');
   }
 
   @override
@@ -66,8 +71,11 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             );
-            await Future.delayed(const Duration(seconds: 5));
-            if (context.mounted) Navigator.pushNamedAndRemoveUntil(context, AppPage.homePage, (route) => false);
+            await Future.delayed(const Duration(seconds: 2));
+            if (context.mounted) {
+              context.pop();
+              GoRouter.of(context).go('/');
+            }
             
             
           }

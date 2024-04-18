@@ -8,6 +8,7 @@ import 'package:flutter_bloc_architecture/route.dart';
 import 'package:flutter_bloc_architecture/src/bloc/logout/logout_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/link.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -118,6 +119,22 @@ class _HomePageState extends State<HomePage> {
               },
               child: Text('Shopping')
             ),
+
+            const Divider(),
+
+            ElevatedButton(
+              onPressed: () {
+                GoRouter.of(context).goNamed(AppPage.bottomNavHomePage);
+              },
+              child: Text('Bottom Navbar')
+            ),
+            Link(
+              uri: Uri.parse('/bottom-nav-notif/bottom-nav-notif-detail'), 
+              builder: (context, followLink) => ElevatedButton(
+                onPressed: followLink,
+                child: Text('Go directly to notification detail page')
+              ),
+            )
 
           ],
         ),

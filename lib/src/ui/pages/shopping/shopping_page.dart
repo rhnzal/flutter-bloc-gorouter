@@ -19,13 +19,13 @@ class ShoppingPage extends StatelessWidget {
               onPressed: () {
                 GoRouter.of(context).goNamed(AppPage.cartPage);
               },
-              child: Text('Cart')
+              child: const Text('Cart')
             ),
             ElevatedButton(
               onPressed: () {
                 GoRouter.of(context).goNamed(AppPage.productPage, pathParameters:{'pid': '1234'});
               },
-              child: Text('Product')
+              child: const Text('Product')
             ),
           ],
         ),
